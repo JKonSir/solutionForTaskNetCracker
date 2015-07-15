@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="JPA 2.0">
+    <CLASSES>
+      <root url="jar://E:/library/hibernate-release-4.3.8.Final/lib/jpa/hibernate-entitymanager-4.3.8.Final.jar!/" />
+      <root url="jar://E:/library/hibernate-release-4.3.8.Final/lib/required/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
