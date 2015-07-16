@@ -10,30 +10,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by gijoe on 7/15/2015.
+ * Created by gijoe on 7/17/2015.
  */
-@WebServlet("ServletFind")
-public class ServletFind extends HttpServlet {
+@WebServlet("ServletAdd")
+public class ServletAdd extends HttpServlet {
 
     @EJB
-    private SessionServiceBean sessionServiceBean;
+    SessionServiceBean sessionServiceBean;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String criterion = request.getParameter("findCriterion");
-        if (criterion == null) {
-            criterion = "";
-        }
         Student student = new Student();
-        ArrayList<Student> students = new ArrayList<>(sessionServiceBean.findByCriterion("'%" + criterion + "%'"));
-        request.getSession().setAttribute("students", students);
-        request.getServletContext().getRequestDispatcher("/find.jsp").forward(request, response);
+        student.setFirstName(request.getParameter("firstNameAdd"));
+        student.setLastName(request.getParameter("lastNameAdd"));
+        student.setGroupNumber(request.getParameter("name[]Add"));
+//        int index = (int)request.getSession().getAttribute("id");
+        sessionServiceBean.add(student);
+        request.getServletContext().getRequestDispatcher("/add.jsp").forward(request, response);
     }
 }

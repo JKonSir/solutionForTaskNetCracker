@@ -14,16 +14,16 @@ public class Student {
     private int idStudent;
     private String firstName;
     private String lastName;
-    private int idGroup;
+    private String groupNumber;
 
     public Student() {
     }
 
-    public Student(int idStudent, String firstName, String lastName, int idGroup) {
+    public Student(int idStudent, String firstName, String lastName, String groupNumber) {
         this.idStudent = idStudent;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.idGroup = idGroup;
+        this.groupNumber = groupNumber;
     }
 
     public int getIdStudent() {
@@ -50,11 +50,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getIdGroup() {
-        return idGroup;
+    public String getGroupNumber() {
+        return groupNumber;
     }
 
-    public void setIdGroup(int idGroup) {
-        this.idGroup = idGroup;
+    public void setGroupNumber(String idGroup) {
+        this.groupNumber = idGroup;
     }
 }
