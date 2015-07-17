@@ -34,17 +34,21 @@
     <b>Group number name student </b><%--<input name="textField3" type="text" value="<%=student.getGroupNumber()%>"><br>--%>
     <select size="1" name="name[]Update">
         <option value="null">null</option>
-        <option selected value="<%=student.getGroupNumber()%>"><%=student.getGroupNumber()%></option>
+        <option selected value="<%=student.getGroupNumber()%>"><%=student.getGroupNumber()%>
+        </option>
         <%
             for (int i = 0; i < studentGroups.size(); i++) {
         %>
-        <option value="<%=studentGroups.get(i).getGroupNumber()%>"><%=studentGroups.get(i).getGroupNumber()%></option>
+        <option value="<%=studentGroups.get(i).getGroupNumber()%>"><%=studentGroups.get(i).getGroupNumber()%>
+        </option>
         <%
             }
         %>
     </select>
     <br>
-    <input type="submit" value="update">
+    <input type="submit" value="update"><br>
+    <a href="index.jsp">Start page</a><br>
+    <a href="find.jsp">Find student</a>
 </form>
 </body>
 </html>
